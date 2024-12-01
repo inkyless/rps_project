@@ -5,6 +5,8 @@ console.log("Hello World")
 //Write rule to win or lose depend the result
 //Display result for each rule
 
+
+// Get computer choice with random value between 0-2
 function getComputerChoice(){
     const max=3;
     let chance = Math.floor(Math.random()*max)
@@ -18,6 +20,7 @@ function getComputerChoice(){
         
 }
 
+// Get User choice while remove whitespace and capitalize the input
 function getHumanChoice(){
     let choice = prompt("Pick Your Choice : ")
     let cap_choice = choice.trim()
@@ -30,12 +33,14 @@ function getHumanChoice(){
     }
 }
 
+// Proceed to play within 5 rounds in loops
 function playGame(){
     const round = 5;
     let humanScore = 0;
     let computerScore = 0;
     let result;
     
+    // Judge the choices to print the results based on rules
     function playRound(humanChoice, computerChoice){
         let winResult = "You win!" + ` ${humanChoice} beats ${computerChoice}`;
         let loseResult = "You lose!" + ` ${computerChoice} beats ${humanChoice}`;
@@ -71,14 +76,18 @@ function playGame(){
                 humanScore++;
             }
         }
+    // Return the conditional result to console log
     return result;
     }
+
     for (let i=0;i<round;i++){
         let score_result;
         const humanSelection = getHumanChoice()
         const computerSelection = getComputerChoice()
         console.log(playRound(humanSelection,computerSelection))
     }
+
+    // Printed after five rounds are played
     const result_string =  `Results => Human : ${humanScore} | Computer : ${computerScore}`
     console.log(result_string)
     if(humanScore>computerScore){
@@ -91,9 +100,8 @@ function playGame(){
     return score_result
 }
 
+// Proceed to run the whole game in five rounds
 console.log(playGame())
-//Will get result between 0-2
-// console.log(getComputerChoice())
-// console.log(getHumanChoice())
+
 
 
