@@ -1,10 +1,7 @@
-console.log("Hello World")
-
 //User and AI will choose three choices 
 // array = ["Paper","Scissors","Rock"]
 //Write rule to win or lose depend the result
 //Display result for each rule
-
 
 // Get computer choice with random value between 0-2
 function getComputerChoice(){
